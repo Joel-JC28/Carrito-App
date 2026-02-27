@@ -1,21 +1,18 @@
-import React, { useLayoutEffect } from 'react';
-import { Button, View, Text, TouchableOpacity } from 'react-native';
-
-import { stylesGlobal } from '../../theme/appTheme';
-import { StackScreenProps } from '@react-navigation/stack';
+import React, { useContext, useLayoutEffect } from 'react';
+import { View, Text, FlatList, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { stylesGlobal } from '../../theme/appTheme';
+
+//aqui
 
 
-interface Props extends StackScreenProps<any, any> { }
+export const CarritoScreens = ({ navigation }: any) => {
+   //aqui
 
-export const CarritoScreens = ({ navigation }: Props) => {
     useLayoutEffect(() => {
         navigation.setOptions({
             headerRight: () => (
-                <TouchableOpacity
-                    onPress={() => alert('Verifique su pedido')}
-                    style={{ marginRight: 15 }}
-                >
+                <TouchableOpacity style={{ marginRight: 15 }}>
                     <Ionicons name="cart" size={24} color="#333" />
                 </TouchableOpacity>
             ),
@@ -23,14 +20,12 @@ export const CarritoScreens = ({ navigation }: Props) => {
     }, [navigation]);
 
     return (
-        <View style={[stylesGlobal.container, { justifyContent: 'center', alignItems: 'center' }]}>
-
-            <Text style={{ fontSize: 22 }}>Verifique sus productos</Text>
-            <Text>Aquí aparecerán los productos agregados</Text>
-            <Button
-                title="Volver al inicio"
-                onPress={() => navigation.popToTop()}
-            />
+        <View style={stylesGlobal.container}>
+            <Text style={{ fontSize: 20, marginBottom: 10 }}>
+                se enlistan los productos
+            </Text>
+{/*aqui*/}
+           
         </View>
     );
 };

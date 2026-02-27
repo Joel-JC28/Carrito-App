@@ -3,8 +3,6 @@ import { View, FlatList } from 'react-native';
 import { stylesGlobal } from '../../theme/appTheme';
 import { ProductoCarrito } from '../components/ProductoCarrito';
 
-
-
 export const productos = [
     { id: '1', nombre: 'Laptop', precio: 1200 },
     { id: '2', nombre: 'Celular', precio: 820 },
@@ -20,11 +18,12 @@ export const ListadoScreens = ({ navigation }: any) => {
                 renderItem={({ item }) => (
                     <ProductoCarrito
                         product={item}
-                        onPress={() => navigation.navigate('Detalle del producto', { producto: item })}
+                        onPress={() =>
+                            navigation.navigate('Detalle del producto', { producto: item })
+                        }
                     />
                 )}
             />
         </View>
     );
 };
-

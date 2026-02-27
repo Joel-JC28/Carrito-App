@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { View, Text, Button } from 'react-native';
 import { stylesGlobal } from '../../theme/appTheme';
+//aqui
 
 
 export const DetalleScreens = ({ route, navigation }: any) => {
     const { producto } = route.params;
+//aqui
 
     return (
         <View style={stylesGlobal.container}>
@@ -15,9 +17,11 @@ export const DetalleScreens = ({ route, navigation }: any) => {
 
             <Button
                 title="Agregar al carrito"
-                onPress={() => navigation.navigate('Carrito de compras')}
+                onPress={() => {
+//aqui
+                    navigation.navigate('Carrito de compras');
+                }}
             />
         </View>
     );
 };
-

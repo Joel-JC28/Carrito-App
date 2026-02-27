@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Button } from 'react-native';
 import { stylesGlobal } from '../../theme/appTheme';
-
+import 'expo-random';
 
 export const InicioScreens = ({ navigation }: any) => {
     return (

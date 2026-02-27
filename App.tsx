@@ -1,15 +1,26 @@
+import "react-native-gesture-handler";
+import "react-native-get-random-values";
 
-import "react-native-gesture-handler"
-import { NavigationContainer } from '@react-navigation/native';
-import React from 'react'
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+
 import { StackNavigator } from "./src/navigator/StackNavigator";
+import { AuthProvider } from './src/context/Context';
+//aqui
 
 
 export const App = () => {
   return (
-    <NavigationContainer>
-      <StackNavigator />
-    </NavigationContainer>
-  )
-}
+    <AuthProvider>
+     { /*carprovier*/}
+        <NavigationContainer>
+          <StackNavigator />
+        </NavigationContainer>
+     { /*carprovier*/}
+      </AuthProvider>
+      
+    
+  );
+};
+
 export default App;
